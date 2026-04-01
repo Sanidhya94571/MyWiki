@@ -17,7 +17,7 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 html,body{height:100%;}
 body{font-family:var(--font-body);background:var(--bg);color:var(--text);display:flex;flex-direction:column;height:100vh;overflow:hidden;}
- 
+
 /* TOPBAR */
 #topbar{background:var(--bg2);border-bottom:1px solid var(--border);padding:6px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;flex-shrink:0;}
 #logo{display:flex;align-items:center;gap:8px;cursor:pointer;}
@@ -30,15 +30,15 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text);display
 #search-btn:hover{background:var(--bg3);}
 #appear-btn{padding:5px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:2px;cursor:pointer;font-size:12px;color:var(--text2);font-family:var(--font-ui);white-space:nowrap;}
 #appear-btn:hover{background:var(--bg3);}
- 
+
 /* CATEGORY PILLS */
 #cats{padding:7px 16px;display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--border);background:var(--bg);flex-shrink:0;}
 .cat-pill{padding:3px 10px;border:1px solid var(--border);border-radius:12px;font-size:12px;cursor:pointer;color:var(--text2);font-family:var(--font-ui);background:var(--bg);}
 .cat-pill:hover,.cat-pill.active{background:#eaf3ff;color:var(--link);border-color:var(--link);}
- 
+
 /* LAYOUT */
 #layout{display:flex;flex:1;overflow:hidden;}
- 
+
 /* SIDEBAR — independent scroll */
 #sidebar{width:200px;min-width:200px;border-right:1px solid var(--border);padding:14px 12px;font-family:var(--font-ui);overflow-y:auto;overflow-x:hidden;flex-shrink:0;}
 #sidebar::-webkit-scrollbar{width:4px;}
@@ -47,20 +47,20 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text);display
 .sb-section h4{font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid var(--bg3);}
 .sb-section a{display:block;font-size:13px;color:var(--link);text-decoration:none;padding:5px 4px;cursor:pointer;line-height:1.4;border-radius:2px;}
 .sb-section a:hover{background:#f0f4ff;text-decoration:underline;}
- 
+
 /* BUG #3 FIX: toc-section always stays in DOM, JS shows/hides it */
 #toc-section{display:none;}
 #toc-list{list-style:decimal;padding-left:16px;}
 #toc-list li{font-size:13px;padding:4px 2px;color:var(--link);cursor:pointer;line-height:1.4;}
 #toc-list li:hover{text-decoration:underline;}
 #toc-list li.sub{margin-left:14px;font-size:12px;}
- 
+
 /* ARTICLE AREA — independent scroll */
 #article-area{flex:1;overflow-y:auto;overflow-x:hidden;padding:20px 28px;}
 #article-area::-webkit-scrollbar{width:6px;}
 #article-area::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
 #article-inner{max-width:var(--content-width);}
- 
+
 #article-title{font-size:26px;font-weight:normal;border-bottom:1px solid var(--border);padding-bottom:4px;margin-bottom:6px;font-family:var(--font-body);}
 #article-subtitle{font-size:13px;color:var(--text2);font-style:italic;margin-bottom:16px;font-family:var(--font-ui);}
 #article-body{font-size:var(--font-size);line-height:var(--line-height);color:var(--text);}
@@ -73,7 +73,7 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text);display
 #article-body b,#article-body strong{font-weight:600;}
 #article-body ul,#article-body ol{margin:8px 0 12px 28px;}
 #article-body li{margin-bottom:5px;}
- 
+
 /* BUG #2 FIX: Tables — prevent text from falling to bottom, fix column overflow */
 #article-body table{border-collapse:collapse;margin:12px 0;font-size:13px;font-family:var(--font-ui);width:auto;max-width:100%;table-layout:auto;}
 #article-body table th,#article-body table td{border:1px solid var(--border);padding:5px 10px;text-align:left;vertical-align:top;}
@@ -81,32 +81,43 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text);display
 /* Wide tables get horizontal scroll instead of breaking layout */
 #article-body .wikitable-wrap{overflow-x:auto;margin:12px 0;}
 #article-body .wikitable-wrap table{margin:0;}
- 
+
 /* Infobox */
 #article-body .infobox{float:right;clear:right;margin:0 0 16px 24px;border:1px solid var(--border);background:var(--bg2);font-size:13px;max-width:280px;font-family:var(--font-ui);}
 #article-body .infobox .infobox-title{background:#cee0f2;color:#000;text-align:center;font-weight:600;padding:6px 8px;font-size:13px;}
 #article-body .infobox table{width:100%;border:none;margin:0;table-layout:fixed;}
 #article-body .infobox table th,#article-body .infobox table td{border:none;border-top:1px solid var(--bg3);font-size:12px;padding:4px 8px;background:transparent;vertical-align:top;word-wrap:break-word;}
 #article-body .infobox table th{font-weight:600;width:40%;color:var(--text2);}
- 
+
 /* BUG #1 FIX: Images — show properly, clickable to open full size */
 #article-body img{max-width:100%;height:auto;display:inline-block;}
 #article-body a.image{display:inline-block;cursor:zoom-in;}
 #article-body a.image img{display:block;}
- 
+
 /* NEW FEATURE: Caption boundary — border around image captions */
 #article-body .thumb{float:right;clear:right;margin:0 0 16px 20px;border:1px solid var(--border);background:var(--bg2);padding:4px;max-width:280px;font-family:var(--font-ui);}
 #article-body .thumb.tleft,#article-body .tright{float:right;clear:right;margin:0 0 16px 20px;}
 #article-body .thumb.tleft{float:left;clear:left;margin:0 20px 16px 0;}
 #article-body .thumbinner{border:1px solid var(--border);background:var(--bg2);padding:4px;display:inline-block;width:100%;}
 #article-body .thumbcaption{font-size:12px;color:var(--text2);margin-top:5px;padding:5px 6px;line-height:1.4;font-family:var(--font-ui);border-top:1px solid var(--border);background:var(--bg2);}
+
+/* GALLERY — Wikipedia image grids */
+#article-body .gallery{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0;padding:0;list-style:none;clear:both;}
+#article-body .gallery li.gallerybox{display:flex;flex-direction:column;margin:0;padding:0;width:auto;}
+#article-body .gallery .thumb{float:none;clear:none;margin:0;width:160px;min-width:120px;max-width:180px;border:1px solid var(--border);background:var(--bg2);padding:4px;}
+#article-body .gallery .thumbinner{width:100%!important;border:none;padding:0;background:transparent;}
+#article-body .gallery img{display:block;width:100%;height:120px;object-fit:cover;cursor:zoom-in;}
+#article-body .gallery .thumbcaption{border-top:1px solid var(--border);background:var(--bg2);padding:4px 5px;font-size:11px;color:var(--text2);line-height:1.3;margin-top:0;min-height:22px;font-family:var(--font-ui);}
+#article-body ul.gallery{padding-left:0;}
+body.dark #article-body .gallery .thumb{background:var(--bg2);border-color:var(--border);}
+body.dark #article-body .gallery .thumbcaption{background:var(--bg2);}
 #article-body .thumbimage{display:block;text-align:center;}
- 
+
 /* Audio/media fix */
 #article-body audio{display:block;margin:8px 0;width:100%;max-width:400px;}
 #article-body video{display:block;margin:8px 0;max-width:100%;height:auto;}
 #article-body .mediaContainer{margin:10px 0;}
- 
+
 /* Image lightbox */
 #lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:200;align-items:center;justify-content:center;flex-direction:column;gap:12px;}
 #lightbox.open{display:flex;}
@@ -114,7 +125,7 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text);display
 #lightbox-caption{color:#eee;font-size:13px;font-family:var(--font-ui);text-align:center;max-width:600px;padding:0 16px;}
 #lightbox-close{position:absolute;top:16px;right:20px;color:#fff;font-size:28px;cursor:pointer;line-height:1;background:none;border:none;}
 #lightbox-close:hover{color:#ccc;}
- 
+
 /* SKELETON */
 #loading{display:none;padding:4px 0;}
 .skel-title{height:32px;width:55%;background:var(--bg3);border-radius:3px;margin-bottom:10px;animation:pulse 1.4s ease-in-out infinite;}
@@ -122,7 +133,7 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text);display
 .skel-line{height:13px;background:var(--bg3);border-radius:3px;margin-bottom:9px;animation:pulse 1.4s ease-in-out infinite;}
 .skel-line.short{width:70%;}.skel-line.medium{width:85%;}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
- 
+
 /* HOME */
 #home-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-top:14px;}
 .topic-card{border:1px solid var(--border);border-radius:3px;padding:12px;cursor:pointer;background:var(--bg);font-family:var(--font-ui);}
@@ -134,7 +145,7 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text);display
 #home-intro{font-size:13px;color:var(--text2);font-family:var(--font-ui);margin-bottom:4px;}
 #back-btn{display:none;font-size:13px;color:var(--link);cursor:pointer;font-family:var(--font-ui);margin-bottom:14px;}
 #back-btn:hover{text-decoration:underline;}
- 
+
 /* APPEARANCE PANEL */
 #appear-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.3);z-index:100;align-items:flex-start;justify-content:flex-end;}
 #appear-overlay.open{display:flex;}
@@ -159,11 +170,11 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text);display
 .color-swatch{width:28px;height:28px;border-radius:50%;cursor:pointer;border:3px solid transparent;}
 .color-swatch.selected{border-color:#333;}
 .color-swatch:hover{opacity:0.8;}
- 
+
 /* FOOTER */
 #footer{border-top:1px solid var(--border);padding:10px 16px;font-size:12px;color:var(--text2);font-family:var(--font-ui);text-align:center;flex-shrink:0;}
 #footer a{color:var(--link);}
- 
+
 /* DARK MODE */
 body.dark{--bg:#1c1c1e;--bg2:#2c2c2e;--bg3:#3a3a3c;--text:#e8e8e8;--text2:#a0a0a0;--border:#48484a;--link:#6ea8fe;--link-visited:#c58af9;}
 body.dark .color-swatch.selected{border-color:#fff;}
@@ -176,7 +187,7 @@ body.dark #article-body .hatnote,body.dark #article-body .dablink,body.dark #art
 </style>
 </head>
 <body>
- 
+
 <div id="topbar">
   <div id="logo" onclick="showHome()">
     <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -194,7 +205,7 @@ body.dark #article-body .hatnote,body.dark #article-body .dablink,body.dark #art
   </div>
   <button id="appear-btn">&#9881; Appearance</button>
 </div>
- 
+
 <div id="cats">
   <span class="cat-pill active" data-cat="all">All Topics</span>
   <span class="cat-pill" data-cat="physics">Physics</span>
@@ -203,7 +214,7 @@ body.dark #article-body .hatnote,body.dark #article-body .dablink,body.dark #art
   <span class="cat-pill" data-cat="maths">Mathematics</span>
   <span class="cat-pill" data-cat="engineering">Engineering</span>
 </div>
- 
+
 <div id="layout">
   <!-- SIDEBAR -->
   <div id="sidebar">
@@ -213,13 +224,13 @@ body.dark #article-body .hatnote,body.dark #article-body .dablink,body.dark #art
       <a onclick="loadArticle('JEE Advanced')">JEE Advanced</a>
       <a onclick="loadArticle('NEET (National Eligibility cum Entrance Test)')">NEET Exam</a>
     </div>
- 
+
     <!-- BUG #3 FIX: toc-section is always in DOM, shown/hidden by JS -->
     <div class="sb-section" id="toc-section">
       <h4>Contents</h4>
       <ol id="toc-list"></ol>
     </div>
- 
+
     <div class="sb-section">
       <h4>Quick Topics</h4>
       <a onclick="loadArticle(&quot;Newton's laws of motion&quot;)">Newton's Laws</a>
@@ -239,7 +250,7 @@ body.dark #article-body .hatnote,body.dark #article-body .dablink,body.dark #art
       <a onclick="loadArticle('Fluid mechanics')">Fluid Mechanics</a>
     </div>
   </div>
- 
+
   <!-- ARTICLE AREA -->
   <div id="article-area">
     <div id="article-inner">
@@ -250,13 +261,13 @@ body.dark #article-body .hatnote,body.dark #article-body .dablink,body.dark #art
         <div class="skel-line medium"></div><div class="skel-line"></div>
         <div class="skel-line short"></div><div class="skel-line"></div>
       </div>
- 
+
       <div id="home-screen">
         <div id="home-title">Welcome to MyWiki</div>
         <div id="home-intro">Your personal JEE &amp; NEET study encyclopedia — powered by Wikipedia.</div>
         <div id="home-grid"></div>
       </div>
- 
+
       <div id="article-view" style="display:none">
         <div id="back-btn" onclick="showHome()">&#8592; Back to Main Page</div>
         <div id="article-title"></div>
@@ -266,11 +277,11 @@ body.dark #article-body .hatnote,body.dark #article-body .dablink,body.dark #art
     </div>
   </div>
 </div>
- 
+
 <div id="footer">
   Content sourced from <a href="https://en.wikipedia.org" target="_blank">Wikipedia</a> via the Wikimedia API &mdash; For personal study use only.
 </div>
- 
+
 <!-- APPEARANCE PANEL -->
 <div id="appear-overlay">
   <div id="appear-panel">
@@ -335,14 +346,14 @@ body.dark #article-body .hatnote,body.dark #article-body .dablink,body.dark #art
     </div>
   </div>
 </div>
- 
+
 <!-- IMAGE LIGHTBOX -->
 <div id="lightbox">
   <button id="lightbox-close" onclick="closeLightbox()">&#10005;</button>
   <img id="lightbox-img" src="" alt=""/>
   <div id="lightbox-caption"></div>
 </div>
- 
+
 <script>
 const topics = [
   {title:"Newton's Laws",query:"Newton's laws of motion",icon:"⚡",cat:"physics",desc:"Foundations of classical mechanics"},
@@ -368,10 +379,10 @@ const topics = [
   {title:"Fluid Mechanics",query:"Fluid mechanics",icon:"💧",cat:"engineering",desc:"Pressure, flow, Bernoulli"},
   {title:"Semiconductors",query:"Semiconductor",icon:"💡",cat:"engineering",desc:"Diodes, transistors, bands"},
 ];
- 
+
 const articleCache = new Map();
 let currentCat = "all";
- 
+
 function renderHome() {
   const filtered = currentCat === "all" ? topics : topics.filter(t => t.cat === currentCat);
   document.getElementById("home-grid").innerHTML = filtered.map(t =>
@@ -382,7 +393,7 @@ function renderHome() {
     </div>`
   ).join("");
 }
- 
+
 function showHome() {
   document.getElementById("home-screen").style.display = "";
   document.getElementById("article-view").style.display = "none";
@@ -391,12 +402,12 @@ function showHome() {
   document.getElementById("loading").style.display = "none";
   document.getElementById("article-area").scrollTop = 0;
 }
- 
+
 // Fetch: exact title first, then fuzzy search fallback
 async function fetchArticle(query) {
   const cacheKey = query.toLowerCase().trim();
   if (articleCache.has(cacheKey)) return articleCache.get(cacheKey);
- 
+
   let pageTitle = null;
   try {
     const r = await fetch(`https://en.wikipedia.org/w/api.php?action=query&titles=${encodeURIComponent(query)}&redirects=1&format=json&origin=*`);
@@ -405,23 +416,23 @@ async function fetchArticle(query) {
     const pid = Object.keys(pages)[0];
     if (pid !== "-1") pageTitle = pages[pid].title;
   } catch(e) {}
- 
+
   if (!pageTitle) {
     const r = await fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(query)}&srlimit=3&format=json&origin=*`);
     const d = await r.json();
     if (!d.query.search.length) throw new Error("Not found");
     pageTitle = d.query.search[0].title;
   }
- 
+
   const r2 = await fetch(`https://en.wikipedia.org/w/api.php?action=parse&page=${encodeURIComponent(pageTitle)}&prop=text|sections|displaytitle&format=json&origin=*`);
   const d2 = await r2.json();
   if (d2.error) throw new Error(d2.error.info);
- 
+
   const result = { title: d2.parse.displaytitle, html: d2.parse.text["*"], sections: d2.parse.sections };
   articleCache.set(cacheKey, result);
   return result;
 }
- 
+
 // Lightbox
 function openLightbox(src, caption) {
   document.getElementById("lightbox-img").src = src;
@@ -436,24 +447,24 @@ document.getElementById("lightbox").addEventListener("click", e => {
   if (e.target === document.getElementById("lightbox")) closeLightbox();
 });
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeLightbox(); });
- 
+
 function renderArticle(data) {
   const { title, html, sections } = data;
   document.getElementById("loading").style.display = "none";
   document.getElementById("article-title").innerHTML = title;
   document.getElementById("article-subtitle").textContent = "From Wikipedia, the free encyclopedia";
- 
+
   const parser = new DOMParser();
   const doc = parser.parseFromString(html, "text/html");
- 
+
   // Remove clutter (hatnotes are kept — styled below)
   doc.querySelectorAll(".mw-editsection,.mw-empty-elt,.navbox,.reflist,.references,.sistersitebox,.noprint,#toc,.toc").forEach(el => el.remove());
- 
+
   // Style hatnotes — "For X, see Y" disambiguation notices at the top of articles
   doc.querySelectorAll(".hatnote, .dablink, .rellink").forEach(hn => {
     hn.style.cssText = "display:block;background:#f0f4ff;border-left:3px solid #6a8fd8;padding:6px 10px;margin:0 0 10px 0;font-size:13px;font-style:italic;font-family:-apple-system,'Segoe UI',sans-serif;color:#444;line-height:1.5;border-radius:0 2px 2px 0;";
   });
- 
+
   // BUG #2 FIX: Wrap wide/complex tables in scrollable container
   doc.querySelectorAll("table.wikitable, table.infobox-subbox").forEach(tbl => {
     if (!tbl.closest(".infobox")) {
@@ -463,7 +474,7 @@ function renderArticle(data) {
       wrap.appendChild(tbl);
     }
   });
- 
+
   // BUG #1 FIX: Fix image URLs — convert protocol-relative to https
   doc.querySelectorAll("img").forEach(img => {
     let src = img.getAttribute("src") || "";
@@ -477,7 +488,7 @@ function renderArticle(data) {
     img.style.maxWidth = "100%";
     img.style.height = "auto";
   });
- 
+
   // BUG #1 FIX: Fix audio/video — OGG files are supported natively in some browsers;
   // convert protocol-relative media src, add controls
   doc.querySelectorAll("audio, video").forEach(media => {
@@ -490,7 +501,7 @@ function renderArticle(data) {
     media.setAttribute("controls", "");
     media.style.maxWidth = "100%";
   });
- 
+
   // Handle wiki File: links that wrap audio/images — make them open properly
   doc.querySelectorAll("a[href^='/wiki/File:'], a[href^='/wiki/Media:']").forEach(a => {
     const inner = a.querySelector("img");
@@ -507,7 +518,7 @@ function renderArticle(data) {
       a.setAttribute("rel", "noopener");
     }
   });
- 
+
   // Handle all other links
   doc.querySelectorAll("a[href]").forEach(a => {
     const href = a.getAttribute("href") || "";
@@ -528,9 +539,11 @@ function renderArticle(data) {
       }
     }
   });
- 
+
   // NEW FEATURE: Add border/styled caption box to thumb divs
   doc.querySelectorAll(".thumbcaption, .thumblegend").forEach(cap => {
+    // Skip captions inside galleries — CSS handles those
+    if (cap.closest(".gallery")) return;
     cap.style.borderTop = "1px solid #a2a9b1";
     cap.style.marginTop = "4px";
     cap.style.paddingTop = "5px";
@@ -541,16 +554,38 @@ function renderArticle(data) {
     cap.style.padding = "5px 6px";
   });
   doc.querySelectorAll(".thumbinner").forEach(ti => {
+    if (ti.closest(".gallery")) return;
     ti.style.border = "1px solid #a2a9b1";
     ti.style.background = "#f8f9fa";
     ti.style.padding = "4px";
     ti.style.display = "inline-block";
   });
- 
+
+  // Fix gallery structure — ensure each gallerybox is a proper list item
+  doc.querySelectorAll(".gallery").forEach(gal => {
+    // Wikipedia outputs galleries as <ul class="gallery"> with <li class="gallerybox"> children
+    // Make sure the ul has no extra padding/margin from Wikipedia's inline styles
+    gal.removeAttribute("style");
+    gal.querySelectorAll(".gallerybox").forEach(box => {
+      box.removeAttribute("style"); // remove Wikipedia's inline width
+    });
+    // Fix gallery image widths — remove hard-coded width attributes
+    gal.querySelectorAll(".thumb").forEach(t => {
+      t.removeAttribute("style");
+    });
+    gal.querySelectorAll(".thumbinner").forEach(ti => {
+      ti.removeAttribute("style");
+    });
+    gal.querySelectorAll("img").forEach(img => {
+      img.removeAttribute("width");
+      img.removeAttribute("height");
+    });
+  });
+
   const body = doc.querySelector(".mw-parser-output");
   const articleBody = document.getElementById("article-body");
   articleBody.innerHTML = body ? body.innerHTML : html;
- 
+
   // Attach click handlers AFTER innerHTML is set
   articleBody.querySelectorAll("a[data-wiki]").forEach(a => {
     a.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); loadArticle(a.dataset.wiki); });
@@ -562,7 +597,7 @@ function renderArticle(data) {
       if (el) document.getElementById("article-area").scrollTop = el.offsetTop - 20;
     });
   });
- 
+
   // BUG #1 FIX: Lightbox for images
   articleBody.querySelectorAll("a[data-lightbox]").forEach(a => {
     a.addEventListener("click", e => {
@@ -578,7 +613,21 @@ function renderArticle(data) {
       openLightbox(fullSrc, caption);
     });
   });
- 
+
+  // Gallery images — each opens in lightbox with its own caption
+  articleBody.querySelectorAll(".gallery .gallerybox").forEach(box => {
+    const img = box.querySelector("img");
+    const cap = box.querySelector(".thumbcaption, .gallerytext");
+    if (!img) return;
+    box.style.cursor = "zoom-in";
+    box.addEventListener("click", e => {
+      e.preventDefault();
+      e.stopPropagation();
+      let fullSrc = img.src.replace(/\/thumb\//, "/").replace(/\/[^\/]+$/, "") || img.src;
+      openLightbox(fullSrc, cap ? cap.textContent.trim() : "");
+    });
+  });
+
   // Also make standalone images (not in thumb) clickable for lightbox
   articleBody.querySelectorAll("img:not(.mw-file-description img)").forEach(img => {
     if (img.src && !img.closest("a[data-lightbox]") && img.width > 60) {
@@ -589,7 +638,7 @@ function renderArticle(data) {
       });
     }
   });
- 
+
   // BUG #3 FIX: Build TOC and make sure it shows
   const toc = document.getElementById("toc-list");
   toc.innerHTML = "";
@@ -614,14 +663,14 @@ function renderArticle(data) {
   } else {
     tocSection.style.display = "none";
   }
- 
+
   document.getElementById("article-area").scrollTop = 0;
 }
- 
+
 async function loadArticle(query) {
   if (!query || !query.trim()) return;
   const cacheKey = query.toLowerCase().trim();
- 
+
   document.getElementById("home-screen").style.display = "none";
   document.getElementById("article-view").style.display = "";
   document.getElementById("article-body").innerHTML = "";
@@ -630,12 +679,12 @@ async function loadArticle(query) {
   document.getElementById("toc-section").style.display = "none";
   document.getElementById("back-btn").style.display = "block";
   document.getElementById("article-area").scrollTop = 0;
- 
+
   if (articleCache.has(cacheKey)) {
     renderArticle(articleCache.get(cacheKey));
     return;
   }
- 
+
   document.getElementById("loading").style.display = "block";
   try {
     const data = await fetchArticle(query);
@@ -646,14 +695,14 @@ async function loadArticle(query) {
     document.getElementById("article-body").innerHTML = `<p style="color:var(--text2);font-family:var(--font-ui);font-size:14px;margin-top:16px;">&#10060; Could not find "<strong>${query}</strong>". Try a different search term.</p>`;
   }
 }
- 
+
 function preloadTopics() {
   const popular = ["Newton's laws of motion","Thermodynamics","Cell (biology)","Organic chemistry","Calculus","Periodic table"];
   let i = 0;
   function next() { if (i >= popular.length) return; fetchArticle(popular[i++]).catch(()=>{}).then(()=>setTimeout(next,900)); }
   setTimeout(next, 2000);
 }
- 
+
 // Cat pills
 document.querySelectorAll(".cat-pill").forEach(pill => {
   pill.onclick = () => {
@@ -663,16 +712,16 @@ document.querySelectorAll(".cat-pill").forEach(pill => {
     showHome(); renderHome();
   };
 });
- 
+
 // Search
 document.getElementById("search-btn").onclick = () => { const q = document.getElementById("search-input").value.trim(); if(q) loadArticle(q); };
 document.getElementById("search-input").addEventListener("keydown", e => { if(e.key==="Enter"){ const q=e.target.value.trim(); if(q) loadArticle(q); } });
- 
+
 // Appearance panel
 document.getElementById("appear-btn").onclick = () => document.getElementById("appear-overlay").classList.add("open");
 document.getElementById("appear-close").onclick = () => document.getElementById("appear-overlay").classList.remove("open");
 document.getElementById("appear-overlay").onclick = e => { if(e.target===document.getElementById("appear-overlay")) document.getElementById("appear-overlay").classList.remove("open"); };
- 
+
 const R = document.documentElement;
 const sizeSlider = document.getElementById("size-slider");
 sizeSlider.oninput = () => { R.style.setProperty("--font-size", sizeSlider.value+"px"); document.getElementById("size-val").textContent = sizeSlider.value+"px"; };
@@ -688,10 +737,9 @@ function setTheme(t,el){document.querySelectorAll("[onclick^='setTheme']").forEa
 function setLinkColor(color,el){document.querySelectorAll(".color-swatch").forEach(e=>e.classList.remove("selected"));el.classList.add("selected");R.style.setProperty("--link",color);}
 function setSpacing(val,el){document.querySelectorAll("[onclick^='setSpacing']").forEach(e=>e.classList.remove("selected"));el.classList.add("selected");R.style.setProperty("--line-height",val);}
 function resetAppearance(){R.style.cssText="";document.body.classList.remove("dark");sizeSlider.value=15;widthSlider.value=900;document.getElementById("size-val").textContent="15px";document.getElementById("width-val").textContent="Standard";document.querySelectorAll(".ap-opt").forEach(e=>e.classList.remove("selected"));document.querySelector("[data-font='serif']").classList.add("selected");document.querySelector("[onclick=\"setWidth(900,this)\"]").classList.add("selected");document.querySelector("[onclick=\"setTheme('light',this)\"]").classList.add("selected");document.querySelector("[onclick=\"setSpacing('1.75',this)\"]").classList.add("selected");document.querySelectorAll(".color-swatch").forEach(e=>e.classList.remove("selected"));document.querySelector("[data-color='#0645ad']").classList.add("selected");}
- 
+
 renderHome();
 preloadTopics();
 </script>
 </body>
 </html>
- 
